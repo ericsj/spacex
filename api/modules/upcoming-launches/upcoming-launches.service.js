@@ -2,7 +2,7 @@ const axios = require("axios");
 const prisma = require("../../db");
 const { formatUpcomingLaunch } = require("./util");
 
-module.exports = class UpcomingLaunchesService {
+class UpcomingLaunchesService {
   constructor() {
     this.populateDb();
   }
@@ -26,4 +26,6 @@ module.exports = class UpcomingLaunchesService {
       data: upcomingLaunches.data.map(formatUpcomingLaunch),
     });
   }
-};
+}
+
+module.exports = UpcomingLaunchesService;

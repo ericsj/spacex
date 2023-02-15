@@ -1,13 +1,12 @@
 const express = require("express");
-const UpcomingLaunchesService = require("./upcoming-lauches.service");
+const UpcomingLaunchesService = require("./upcoming-launches.service");
 
 const UpcomingLaunchesController = express.Router();
-const pastLanchesService = new UpcomingLaunchesService();
+const pastLaunchesService = new UpcomingLaunchesService();
 UpcomingLaunchesController.get("/", async (req, res, next) => {
   try {
-    res.send(await pastLanchesService.findAll());
+    res.send(await pastLaunchesService.findAll());
   } catch (err) {
-    console.log(111,err)
     next(err);
   }
 });
