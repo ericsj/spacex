@@ -1,9 +1,13 @@
 # Run locally
 
-1. [Install Docker Compose if you don't have](https://docs.docker.com/compose/install/)
+1. [Install Docker Compose if you don't have it installed](https://docs.docker.com/compose/install/)
 
-2. Start containers
+2. Setup a host alias so Optimize works
+
+       echo "127.0.0.1       localhost.com" | tee -a /etc/hosts
+
+3. Start containers
 
         docker compose up
 
-3. In your browser, go to [localhost:3000]()
+4. In your browser, go to [localhost.com:3000]()

@@ -26,6 +26,8 @@ services:
     ports:
       - 3000:3000
     working_dir: /app
+    environment:
+      - DANGEROUSLY_DISABLE_HOST_CHECK=true
     volumes:
       - ./client:/app
     depends_on: [api]
