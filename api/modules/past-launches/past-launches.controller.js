@@ -10,5 +10,12 @@ PastLaunchesController.get("/", async (req, res, next) => {
     next(err);
   }
 });
+PastLaunchesController.get("/last", async (req, res, next) => {
+  try {
+    res.send(await pastLaunchesService.findLast());
+  } catch (err) {
+    next(err);
+  }
+});
 
 module.exports = PastLaunchesController;

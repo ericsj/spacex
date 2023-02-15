@@ -16,6 +16,15 @@ class UpcomingLaunchesService {
     return data;
   }
 
+  async findNext() {
+    const data = await prisma.UpcomingLaunch.findFirst({
+      orderBy: {
+        date: "asc",
+      },
+    });
+    return data;
+  }
+
   async populateDb() {
     const config = {
       url: "https://api.spacexdata.com/v4/launches/upcoming",

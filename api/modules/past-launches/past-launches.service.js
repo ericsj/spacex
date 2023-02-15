@@ -16,6 +16,15 @@ class PastLaunchesService {
     return data;
   }
 
+  async findLast() {
+    const data = await prisma.PastLaunch.findFirst({
+      orderBy: {
+        date: "desc",
+      },
+    });
+    return data;
+  }
+
   async populateDb() {
     const config = {
       url: "https://api.spacexdata.com/v4/launches/past",
