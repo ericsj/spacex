@@ -5,9 +5,12 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=jijij;oi**
       - POSTGRES_DB=spacex
+      - NODE_ENV=development
+    ports:
+      - "5433:5432"
   api:
     image: node:16-alpine
-    command: sh -c "npm i && npx prisma migrate dev && node index.js"
+    command: sh -c "npm i && npx prisma migrate dev && npx nodemon index.js"
     ports:
       - 5000:5000
     working_dir: /app

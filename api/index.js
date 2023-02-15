@@ -7,7 +7,6 @@ const errorHandler = require("./modules/middleware/errorHandler.middleware");
 const app = express();
 app.use("/past-launches", PastLanchesController);
 app.use("/upcoming-launches", UpcomingLanchesController);
-app.use(errorHandler);
 app.listen(process.env.PORT, () => {
   console.log("app up and running on port", process.env.PORT);
 });
